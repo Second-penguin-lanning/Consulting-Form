@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreigner Support Specialist | Immigration Lawyer & Japanese Life Planner</title>
+    
+    <!-- Fonts: Noto Sans (Body) & Noto Serif (Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#E3F2FD', // Pale Blue (Main)
+                            DEFAULT: '#90CAF9',
+                            dark: '#42A5F5',
+                            text: '#1E3A8A', // Deep Blue for text
+                        },
+                        accent: {
+                            DEFAULT: '#9B2E35', // Crimson (Accent)
+                            hover: '#7a2228',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans"', 'sans-serif'],
+                        serif: ['"Noto Serif"', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(rgba(227, 242, 253, 0.85), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .hero-text-anim {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 1s ease-out forwards;
+        }
+
+        .hero-delay-1 { animation-delay: 0.2s; }
+        .hero-delay-2 { animation-delay: 0.6s; }
+        .hero-delay-3 { animation-delay: 1.0s; }
+
+        @keyframes heroFadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-white">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex flex-col font-serif font-bold text-brand-text tracking-wide leading-tight group">
+                <span class="text-lg md:text-2xl group-hover:text-accent transition-colors duration-300">Second Penguin Planning</span>
+                <span class="text-xs md:text-sm text-gray-500 font-normal">Tokunaga Gyoseishosi Office</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#hero" class="text-gray-600 hover:text-accent transition duration-300 text-sm tracking-widest">TOP</a>
+                <a href="#about" class="text-gray-600 hover:text-accent transition duration-300 text-sm tracking-widest">ABOUT</a>
+                <a href="#services" class="text-gray-600 hover:text-accent transition duration-300 text-sm tracking-widest">SERVICES</a>
+                <a href="#access" class="text-gray-600 hover:text-accent transition duration-300 text-sm tracking-widest">ACCESS</a>
+                <a href="https://airtable.com/app8c8jdnaaohynYE/pagNr42A4FV5qJePV/form" target="_blank" class="px-5 py-2 bg-accent text-white rounded-full hover:bg-accent-hover transition duration-300 shadow-md text-sm">CONTACT</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#hero" class="text-gray-600 hover:text-accent">TOP</a>
+                <a href="#about" class="text-gray-600 hover:text-accent">ABOUT</a>
+                <a href="#services" class="text-gray-600 hover:text-accent">SERVICES</a>
+                <a href="#access" class="text-gray-600 hover:text-accent">ACCESS</a>
+                <a href="https://airtable.com/app8c8jdnaaohynYE/pagNr42A4FV5qJePV/form" target="_blank" class="text-accent font-bold">CONTACT</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat pt-24">
+        <div class="container mx-auto px-6 text-center md:text-left relative z-10">
+            <div class="md:w-3/4 lg:w-2/3">
+                <div class="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-accent opacity-0 hero-text-anim h-full -ml-8"></div>
+
+                <p class="text-accent font-bold tracking-widest mb-4 uppercase hero-text-anim">Professional Support for Global Citizens</p>
+                
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 leading-tight mb-6 hero-text-anim hero-delay-1">
+                    Global Support Consultant<br>
+                    <span class="text-2xl md:text-4xl mt-2 block text-gray-600">Immigration Lawyer & Japanese Life Planner</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-700 mb-10 leading-relaxed hero-text-anim hero-delay-2 font-medium">
+                    A specialist dedicated to supporting foreigners living and working in Japan.<br class="hidden md:block">
+                    From legal visa procedures to long-term life planning,<br>
+                    I am here to guide your journey with expertise and care.
+                </p>
+
+                <div class="hero-text-anim hero-delay-3 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://airtable.com/app8c8jdnaaohynYE/pagNr42A4FV5qJePV/form" target="_blank" class="px-8 py-4 bg-accent text-white rounded shadow-lg hover:bg-accent-hover transition duration-300 text-center font-bold">
+                        Book a Consultation
+                    </a>
+                    <a href="#about" class="px-8 py-4 bg-white text-accent border border-accent rounded shadow hover:bg-gray-50 transition duration-300 text-center font-medium">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-accent text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="py-24 bg-brand-light relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="text-accent font-bold tracking-widest uppercase">About Me</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mt-2">Your Bridge to Life in Japan</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <div class="relative">
+                        <div class="absolute inset-0 border-2 border-accent transform translate-x-4 translate-y-4 rounded-lg z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Professional Business Tools" 
+                             class="relative z-10 w-full rounded-lg shadow-xl object-cover h-96 md:h-[500px]">
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <h3 class="text-2xl font-serif font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">
+                            <i class="fas fa-user-tie"></i>
+                        </span>
+                        My Mission
+                    </h3>
+                    
+                    <p class="text-gray-600 leading-loose mb-6">
+                        Nice to meet you. I provide multifaceted support for foreigners challenging themselves in Japan through my roles as a Consultant, Administrative Scrivener (Immigration Lawyer), and **Japanese Life Planner**.
+                    </p>
+                    <p class="text-gray-600 leading-loose mb-8">
+                        My strength lies in providing a one-stop solution: not just legal visa procedures, but also life planning and practical Japanese coaching to break barriers. I don't just "finish the paperwork"—I walk alongside you to ensure your life in Japan is stable, meaningful, and truly fulfilling.
+                    </p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="bg-white p-4 rounded shadow-sm border-l-4 border-accent flex items-start">
+                            <i class="fas fa-handshake text-brand-dark text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Life & Career Consulting</h4>
+                                <p class="text-sm text-gray-500 mt-1">In-depth listening to your concerns regarding employment, life, and entrepreneurship in Japan.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded shadow-sm border-l-4 border-accent flex items-start">
+                            <i class="fas fa-passport text-brand-dark text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Immigration Lawyer</h4>
+                                <p class="text-sm text-gray-500 mt-1">Handling complex procedures for work visas, permanent residency, and naturalization.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded shadow-sm border-l-4 border-accent flex items-start">
+                            <i class="fas fa-map-marked-alt text-brand-dark text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Japanese Life Planner</h4>
+                                <p class="text-sm text-gray-500 mt-1">Holistic guidance including language coaching, cultural integration, and long-term residency advice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="text-accent font-bold tracking-widest uppercase">Services</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mt-2">How I Can Support You</h2>
+                <p class="mt-4 text-gray-500">Tailored solutions for your unique journey in Japan.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 fade-in-section bg-brand-light bg-opacity-30 text-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-accent text-2xl shadow-sm mb-6 mx-auto">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Life & Career Consulting</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Navigating workplace issues and adapting to Japanese business customs. I provide strategic advice for long-term stability and success in Japan.
+                    </p>
+                </div>
+
+                <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 fade-in-section bg-brand-light bg-opacity-30 text-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-accent text-2xl shadow-sm mb-6 mx-auto">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Visa Applications</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Expert handling of Certificate of Eligibility (COE), visa status changes, and renewals. I manage the paperwork so you can focus on your goals.
+                    </p>
+                </div>
+
+                <div class="p-8 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 fade-in-section bg-brand-light bg-opacity-30 text-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-accent text-2xl shadow-sm mb-6 mx-auto">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Japanese Life Planning</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Beyond language lessons, I help you design your future in Japan—from mastering social nuances to planning for permanent residency and beyond.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Access Section -->
+    <section id="access" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="text-accent font-bold tracking-widest uppercase">Access</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800 mt-2">Office Location</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-stretch fade-in-section">
+                <!-- Office Information Card -->
+                <div class="w-full lg:w-1/2 bg-white p-8 md:p-12 rounded-2xl shadow-xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-brand-text mb-2">Second Penguin Planning</h3>
+                        <p class="text-gray-500 mb-8 font-medium">Tokunaga Administrative Scrivener Office</p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-brand-light text-brand-dark rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Address</h4>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        7N-04-01 Kobe Fashion Mart, 6-9 Koyocho-naka, Higashinada-ku, Kobe-city, Hyogo 658-0032 Japan
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-brand-light text-brand-dark rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Phone</h4>
+                                    <p class="text-gray-700">070-9192-2524</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-brand-light text-brand-dark rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider">Email</h4>
+                                    <p class="text-gray-700">info@second-penguin.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="https://maps.google.com/?q=Kobe+Fashion+Mart" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center text-accent font-bold hover:underline">
+                            Open in Google Maps <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Office Image/Visual -->
+                <div class="w-full lg:w-1/2 relative min-h-[300px] rounded-2xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Modern Office Building" 
+                         class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-brand-text/20"></div>
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-lg">
+                        <p class="text-xs font-bold text-brand-text mb-1 uppercase tracking-widest">Office Location</p>
+                        <p class="text-sm text-gray-600 italic">Conveniently located in the Kobe Fashion Mart building, accessible via Rokko Liner.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Trigger -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-serif font-bold mb-6">Let's Design Your Future in Japan Together</h2>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">
+                Tell me about your aspirations and goals. With legal expertise and holistic life planning, I provide the support you need to thrive.
+            </p>
+            <a href="https://airtable.com/app8c8jdnaaohynYE/pagNr42A4FV5qJePV/form" target="_blank" class="inline-block px-10 py-4 bg-accent hover:bg-accent-hover transition duration-300 rounded text-white font-bold text-lg mb-12 shadow-xl">
+                <i class="fas fa-edit mr-2"></i> Contact via Form
+            </a>
+            
+            <div class="border-t border-gray-800 pt-8 text-sm text-gray-500">
+                <p>&copy; 2024 Second Penguin Planning. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
