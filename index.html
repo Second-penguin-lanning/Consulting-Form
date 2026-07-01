@@ -83,6 +83,72 @@
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white">
 
+    <!-- ===== SP-MIGRATE-NOTICE START ===== -->
+    <div id="sp-migrate-notice" class="sp-migrate-notice">
+        <div class="sp-migrate-notice__inner">
+            <span class="sp-migrate-notice__text">
+                This page is being integrated into our main site. For the latest information in English, 日本語, Tagalog and Bahasa Indonesia, please visit:
+            </span>
+            <a href="https://tokunaga-gyosei.jp/en/" class="sp-migrate-notice__link" target="_blank" rel="noopener">
+                tokunaga-gyosei.jp/en <span aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+        <button type="button" class="sp-migrate-notice__close" onclick="document.getElementById('sp-migrate-notice').style.display='none';" aria-label="Close notice">&times;</button>
+    </div>
+    <style>
+        .sp-migrate-notice {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #1E3A8A;
+            color: #ffffff;
+            padding: 10px 44px 10px 16px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .sp-migrate-notice__inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            max-width: 960px;
+        }
+        .sp-migrate-notice__link {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: underline;
+            white-space: nowrap;
+        }
+        .sp-migrate-notice__link:hover {
+            color: #E3F2FD;
+        }
+        .sp-migrate-notice__close {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 4px;
+        }
+        @media (max-width: 640px) {
+            .sp-migrate-notice {
+                padding: 8px 36px 8px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+    <!-- ===== SP-MIGRATE-NOTICE END ===== -->
+
     <!-- Header -->
     <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm" id="header">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
